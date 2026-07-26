@@ -14,7 +14,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="icon" type="image/png" href="assets/dc-favicon-32.png">
+<link rel="apple-touch-icon" href="assets/dc-favicon-180.png">
 <link rel="stylesheet" href="css/styles.css">
 <script type="application/ld+json">
 {
@@ -24,7 +25,6 @@
   "image":"https://www.dreamchartersboatrentals.com/assets/centurion.png",
   "description":"Family-owned luxury boat charters on Lake Travis, Lake Austin, Lake LBJ and Canyon Lake. Captain and fuel included.",
   "telephone":"+1-512-808-3270",
-  "priceRange":"$$$",
   "url":"https://www.dreamchartersboatrentals.com/",
   "areaServed":["Lake Travis","Lake Austin","Lake LBJ","Canyon Lake","Austin, Texas"],
   "address":{"@type":"PostalAddress","addressLocality":"Austin","addressRegion":"TX","addressCountry":"US"},
@@ -41,9 +41,9 @@
 <section class="hero">
   <img class="hero__img" src="assets/centurion.png" alt="The Centurion Ri237 charter boat on Lake Travis" fetchpriority="high">
   <div class="hero__content">
-    <span class="rating-pill"><span class="stars">★★★★★</span> 4.9 · 50 Google reviews</span>
+    <span class="rating-pill"><span class="stars" aria-hidden="true">★★★★★</span> <span class="sr-only">Rated </span>4.9<span class="sr-only"> out of 5 stars</span> · 50 Google reviews</span>
     <p class="eyebrow">Lake Travis · Lake Austin · Lake LBJ · Canyon Lake</p>
-    <h1>Your best day on Lake Travis starts here.</h1>
+    <h1 class="hero__title"><span>YOUR PREFERRED</span> <span>AUSTIN, TEXAS</span> <span>BOAT CHARTER</span></h1>
     <p class="hero__sub">Private boat charters with pro captains — wakesurfing, tubing and sunset cruises. Fuel and captain always included. You just bring the crew.</p>
     <div class="hero__cta">
       <a class="btn btn-primary btn-lg" href="book.html">Book Your Charter</a>
@@ -55,7 +55,7 @@
 <!-- ===== Trust bar ===== -->
 <div class="trustbar">
   <div class="trustbar__row">
-    <span class="trustbar__item"><span class="stars">★</span> 4.9 <span style="opacity:.85">(50 Google reviews)</span></span>
+    <span class="trustbar__item"><span class="stars" aria-hidden="true">★</span> <span class="sr-only">Rated </span>4.9<span class="sr-only"> out of 5 stars</span> <span style="opacity:.85">(50 Google reviews)</span></span>
     <span class="trustbar__item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 5-5.5"/></svg> Licensed captains included</span>
     <span class="trustbar__item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 5-5.5"/></svg> Fuel included</span>
     <span class="trustbar__item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 5-5.5"/></svg> Family owned</span>
@@ -76,9 +76,8 @@
         <img class="card__img" src="assets/centurion.png" alt="Centurion Ri237 wakesurf boat on Lake Travis">
         <div class="card__body">
           <h3 class="card__title">Centurion Ri237</h3>
+          <p style="color:var(--text-muted);margin:.2rem 0 .6rem">The flagship of the Dream Charters ATX fleet- our Centurion Ri237.</p>
           <div class="card__meta"><span><b>Up to 12</b> guests</span><span>Lake Travis</span><span>3 hr min</span></div>
-          <!-- OWNER: confirm price -->
-          <span class="price">from $XXX<small>/hr</small></span>
           <div class="card__foot"><a class="btn btn-secondary btn-block" href="boat-centurion.html">View boat</a></div>
         </div>
       </article>
@@ -87,9 +86,8 @@
         <img class="card__img" src="assets/nautique-g23.png" alt="Nautique G23 charter boat on Lake Travis">
         <div class="card__body">
           <h3 class="card__title">Nautique G23</h3>
+          <p style="color:var(--text-muted);margin:.2rem 0 .6rem">Step aboard our Nautique G23!</p>
           <div class="card__meta"><span><b>Up to 10</b> guests</span><span>Lake Travis</span><span>3 hr min</span></div>
-          <!-- OWNER: confirm price -->
-          <span class="price">from $XXX<small>/hr</small></span>
           <div class="card__foot"><a class="btn btn-secondary btn-block" href="boat-nautique-g23.html">View boat</a></div>
         </div>
       </article>
@@ -98,9 +96,8 @@
         <img class="card__img" src="assets/nautique-230.png" alt="Nautique 230 charter boat on Lake Travis">
         <div class="card__body">
           <h3 class="card__title">Nautique 230</h3>
-          <div class="card__meta"><span><b>Up to 12</b> guests</span><span>Travis · Austin · LBJ</span><span>3 hr min</span></div>
-          <!-- OWNER: confirm price -->
-          <span class="price">from $XXX<small>/hr</small></span>
+          <p style="color:var(--text-muted);margin:.2rem 0 .6rem">This Dream Charters ATX OG- our Nautique 230 Edition.</p>
+          <div class="card__meta"><span><b>Up to 12</b> guests</span><span>Lake Travis, Lake Austin, Lake LBJ</span><span>3 hr min</span></div>
           <div class="card__foot"><a class="btn btn-secondary btn-block" href="boat-nautique-230.html">View boat</a></div>
         </div>
       </article>
@@ -109,15 +106,14 @@
         <img class="card__img" src="assets/paragon.png" alt="G23 Paragon wakeboat on Canyon Lake">
         <div class="card__body">
           <h3 class="card__title">G23 Paragon</h3>
-          <div class="card__meta"><span><b>Up to ~12</b> guests</span><span>Canyon Lake only</span><span>3 hr min</span></div>
-          <!-- OWNER: confirm price -->
-          <span class="price">from $XXX<small>/hr</small></span>
+          <p style="color:var(--text-muted);margin:.2rem 0 .6rem">Experience the lake on THE top of the line wakeboat money can buy.</p>
+          <div class="card__meta"><span>Lake Austin, Canyon Lake</span><span>3 hr min</span></div>
           <div class="card__foot"><a class="btn btn-secondary btn-block" href="boat-g23-paragon.html">View boat</a></div>
         </div>
       </article>
 
     </div>
-    <div class="center" style="margin-top:28px"><a class="btn btn-primary" href="boats.html">See the full fleet</a></div>
+    <div class="center" style="margin-top:28px"><a class="btn btn-primary" href="boats.html">Learn about our boats</a></div>
   </div>
 </section>
 
@@ -131,21 +127,21 @@
     <div class="grid grid-3">
       <div class="feature">
         <div class="feature__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5"/><path d="M5 17V9l7-4 7 4v8"/></svg></div>
-        <h3>Boat Charters</h3>
+        <h3>Wakeboat Charters</h3>
         <p style="margin-bottom:.6rem">Wakesurf, wakeboard, tube and cruise — a full private day on the water with your captain. <b>3 hours+.</b></p>
-        <a href="experiences.html#charters">Explore charters →</a>
+        <a href="experiences.html#wakeboat-charters">Explore charters →</a>
       </div>
       <div class="feature">
         <div class="feature__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1 2-1 4-1"/><path d="M12 4c1.5 1 2 3 1 5s-3 2-4 4"/></svg></div>
-        <h3>Wakesurf Lessons</h3>
+        <h3>Professional Wakesurf Lessons</h3>
         <p style="margin-bottom:.6rem">First timers welcome. Our captains are famously patient — most guests are up and surfing the same day. <b>2 hours.</b></p>
-        <a href="experiences.html#wakesurf">Learn to surf →</a>
+        <a href="experiences.html#wakesurf-lessons">Learn to surf →</a>
       </div>
       <div class="feature">
         <div class="feature__icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19"/></svg></div>
         <h3>Sunset Cruises</h3>
         <p style="margin-bottom:.6rem">Golden hour on Lake Travis with the crew, the cooler and the sound system. The easiest way to end a day. <b>2 hours.</b></p>
-        <a href="experiences.html#sunset">See sunset cruises →</a>
+        <a href="experiences.html#sunset-cruises">See sunset cruises →</a>
       </div>
     </div>
   </div>
@@ -183,28 +179,28 @@
 <section class="section bg-soft">
   <div class="wrap">
     <div class="center" style="margin-bottom:30px">
-      <p class="eyebrow"><span style="color:#FFC24B">★★★★★</span> 4.9 · 50 Google reviews</p>
+      <p class="eyebrow"><span class="stars" aria-hidden="true">★★★★★</span> <span class="sr-only">Rated </span>4.9<span class="sr-only"> out of 5 stars</span> · 50 Google reviews</p>
       <h2>Guests love their captains by name</h2>
     </div>
     <div class="carousel">
       <div class="carousel__track">
         <div class="review">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span>
           <p class="review__text">"Me and my fiancé had our joint bachelor and bachelorette trip in Austin this past weekend. We got the chance to book a boat day with Tyler — it was 100% the highlight of our entire trip. We had so much fun surfing and tubing!!! We will definitely be back. 10/10 experience."</p>
           <p class="review__by">Taylor Cross <span class="review__tag">· Bachelor/bachelorette</span></p>
         </div>
         <div class="review">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span>
           <p class="review__text">"Awesome experience! My first time on Lake Travis and couldn't have asked for a better time. Our drivers Tyler and Sydney were a ton of fun and made the experience enjoyable. Nice size wave on the wake surf as well."</p>
           <p class="review__by">Ryan Knop <span class="review__tag">· Wakesurf</span></p>
         </div>
         <div class="review">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span>
           <p class="review__text">"We had our family in town and had 9 of us — Tyler made our trip SO enjoyable! Everyone got to wakesurf and the kids got to tube. Exceptionally safe, very friendly and so easy to work with. I HIGHLY RECOMMEND this crew!"</p>
           <p class="review__by">Family day on Lake Travis <span class="review__tag">· Family</span></p>
         </div>
         <div class="review">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span>
           <p class="review__text">"Wonderful 4th of July with Dream Charters! Tyler and Sydney were amazing. Teenage daughters had a blast learning how to wake surf and then finished off with some tubing. Highly recommend for your next trip to Lake Travis. You won't be disappointed!"</p>
           <p class="review__by">John Rose <span class="review__tag">· Family</span></p>
         </div>
@@ -242,7 +238,7 @@
   <div class="wrap">
     <p class="eyebrow">Captain's on us. Fuel's on us.</p>
     <h2>Ready to get on the water?</h2>
-    <p class="lead" style="color:#EAF1F7;margin:0 auto 1.6rem">Lock in your date in minutes — or text us for the fastest response.</p>
+    <p class="lead" style="margin:0 auto 1.6rem">Lock in your date in minutes — or text us for the fastest response.</p>
     <div class="hero__cta">
       <a class="btn btn-primary btn-lg" href="book.html">Book Your Charter</a>
       <a class="btn btn-ghost-light btn-lg" href="sms:+15128083270">Text us 512-808-3270</a>

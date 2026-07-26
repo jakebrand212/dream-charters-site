@@ -9,27 +9,43 @@
   var IG = "https://www.instagram.com/dreamcharters.atx/";
   var FB = "https://www.facebook.com/";
 
-  // Real client logo (transparent PNG) on a light chip so the dark-blue
-  // mark stays visible against the navy nav/footer.
+  // True-alpha logo sitting directly on the background — no chip.
+  // Nav and footer are both --navy, so both take the white lockup.
   var LOGO =
-    '<span class="logo-chip"><img src="assets/logo.png" alt="Dream Charters ATX logo"></span>';
+    '<img class="brand__logo" src="assets/dc-logo-white.png" alt="Dream Charters ATX" width="541" height="293">';
 
+  // Single source of truth for header, mobile menu AND footer nav, so the
+  // three can never drift out of order or out of sync.
+  // NOTE: Home is "index.html", not "/", so the site still works over file://
+  // and from a project subpath — every other link here is relative too.
   var LINKS = [
-    { href: "boats.html", label: "Boats", key: "boats" },
+    { href: "index.html", label: "Home", key: "home" },
+    { href: "book.html", label: "Contact Us", key: "book" },
+    { href: "boats.html", label: "Our Boats", key: "boats" },
     { href: "experiences.html", label: "Experiences", key: "experiences" },
-    { href: "occasions.html", label: "Occasions", key: "occasions" },
-    { href: "reviews.html", label: "Reviews", key: "reviews" },
     { href: "gallery.html", label: "Gallery", key: "gallery" },
-    { href: "about.html", label: "About", key: "about" },
-    { href: "faq.html", label: "FAQ", key: "faq" }
+    { href: "reviews.html", label: "Reviews", key: "reviews" },
+    { href: "faq.html", label: "FAQ", key: "faq" },
+    { href: "waiver.html", label: "Waiver Form", key: "waiver" }
   ];
 
   var page = document.body.getAttribute("data-page") || "";
 
   function navLinks(mobile) {
     return LINKS.map(function (l) {
-      var active = l.key === page ? " active" : "";
-      return '<a class="' + active.trim() + '" href="' + l.href + '">' + l.label + "</a>";
+      var on = l.key === page;
+      return '<a class="' + (on ? "active" : "") + '"' +
+        (on ? ' aria-current="page"' : "") +
+        ' href="' + l.href + '">' + l.label + "</a>";
+    }).join("");
+  }
+
+  // Footer "Explore" column — same links, same order, generated from LINKS.
+  function footerLinks() {
+    return LINKS.map(function (l) {
+      var on = l.key === page;
+      return "<li><a" + (on ? ' class="active" aria-current="page"' : "") +
+        ' href="' + l.href + '">' + l.label + "</a></li>";
     }).join("");
   }
 
@@ -66,15 +82,7 @@
         "</div>" +
         "<div>" +
           "<h4>Explore</h4>" +
-          "<ul>" +
-            '<li><a href="boats.html">Our Fleet</a></li>' +
-            '<li><a href="experiences.html">Experiences</a></li>' +
-            '<li><a href="occasions.html">Occasions</a></li>' +
-            '<li><a href="reviews.html">Reviews</a></li>' +
-            '<li><a href="gallery.html">Gallery</a></li>' +
-            '<li><a href="faq.html">FAQ</a></li>' +
-            '<li><a href="waiver.html">Waiver Form</a></li>' +
-          "</ul>" +
+          "<ul>" + footerLinks() + "</ul>" +
         "</div>" +
         "<div>" +
           "<h4>Get on the water</h4>" +
@@ -90,7 +98,8 @@
       "</div>" +
       '<div class="wrap footer__bottom">' +
         "<span>© " + "2026 Dream Charters ATX · Demo site</span>" +
-        '<span>★ 4.9 · 50 Google reviews</span>' +
+        '<span><span class="stars" aria-hidden="true">★</span> '+
+        '<span class="sr-only">Rated </span>4.9<span class="sr-only"> out of 5 stars</span> · 50 Google reviews</span>' +
       "</div>" +
     "</footer>";
 
