@@ -239,6 +239,11 @@ img{max-width:100%;display:block}
 .card__title{margin:0;font-size:1.3rem}
 .card__meta{display:flex;flex-wrap:wrap;gap:.4rem .9rem;color:var(--text-muted);font-size:.9rem;margin:.1rem 0}
 .card__meta b{color:var(--navy)}
+.price{font-family:var(--font-head);font-weight:800;color:var(--navy);font-size:1.15rem}
+.price small{font-weight:600;color:var(--text-muted);font-size:.8rem}
+/* Sits once per page that shows prices — the ranges are unconfirmed, so the
+   season/day caveat travels with them. Muted but AA (6.85:1 on white). */
+.rate-note{font-size:.85rem;color:var(--text-muted);margin:16px 0 0;max-width:60ch}
 .card__foot{margin-top:auto;padding-top:.4rem}
 
 .pill{display:inline-flex;align-items:center;gap:.35rem;background:var(--surface-alt);color:var(--navy);
@@ -263,7 +268,9 @@ img{max-width:100%;display:block}
 .xp__chip{margin:0 0 .7rem}
 .xp__label{font-family:var(--font-head);font-weight:700;color:var(--navy);
   font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin:1.3rem 0 .7rem}
+.xp__price{margin:1.4rem 0 0}
 .xp__cta{margin-top:1.5rem}
+.xp__price + .xp__cta{margin-top:1rem}
 .xp-list > .xp:nth-child(even){background:var(--surface-alt)}
 @media(min-width:860px){
   .xp__inner{grid-template-columns:1fr 1fr;gap:48px}
@@ -320,17 +327,20 @@ img{max-width:100%;display:block}
 .included svg{flex:0 0 auto;color:var(--action);margin-top:2px}
 
 /* ---------- Spec row ----------
-   Tile count varies per boat (2 on the Paragon, 3 on the rest), so the track
-   count is never hardcoded. The hairlines are the container's background
-   showing through a 1px gap between opaque tiles — which means a PARTIAL ROW
-   is not just an alignment problem, it renders the empty cell as a solid
-   --border block. So: one column below 640px, where 3 tiles in 2 columns
-   would strand an empty cell; auto-fit above it, where the container is
-   always wide enough for at least 3 tracks and a partial row can't occur.
-   auto-fit (not auto-fill) collapses the surplus empty tracks and their
-   gutters, so 2 and 3 tiles each stretch to fill the full row. */
+   Tile count varies per boat (3 on the Paragon, which has no confirmed
+   capacity; 4 on the rest), so the track count is never hardcoded.
+   The hairlines are the container's background showing through a 1px gap
+   between opaque tiles — which means a PARTIAL ROW is not just an alignment
+   problem, it renders each empty cell as a solid --border block. Because
+   auto-fit collapses surplus empty tracks, any track count >= the tile count
+   is a clean single row; the only unsafe counts are strictly between 1 and
+   the tile count (3 tracks / 4 tiles, or 2 tracks / 3 tiles). So there are
+   exactly two safe regimes: one column, or at least 4 tracks.
+   4 tracks of minmax(150px,1fr) need 603px of container, i.e. a 643px
+   viewport before the gutters — 680px clears that with room for a desktop
+   scrollbar, so the grid never lands in the unsafe middle. */
 .specs{display:grid;grid-template-columns:1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-@media(min-width:640px){.specs{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}}
+@media(min-width:680px){.specs{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}}
 .spec{background:#fff;padding:18px 16px;text-align:center}
 .spec b{display:block;font-family:var(--font-head);font-size:1.3rem;color:var(--navy)}
 .spec span{font-size:.82rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
