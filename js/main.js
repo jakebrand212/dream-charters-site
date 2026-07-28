@@ -46,7 +46,7 @@
     !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (canReveal) {
     var targets = document.querySelectorAll(
-      ".card, .feature, .review, .captain, .occasion, .gallery figure, .spec"
+      ".card, .feature, .review, .occasion, .gallery figure, .spec"
     );
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {

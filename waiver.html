@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Waiver Form | Dream Charters ATX — Liability Waiver</title>
-<meta name="description" content="Complete the Dream Charters ATX liability waiver before your Lake Travis charter. Every guest signs before boarding — quick, standard and required for your safety.">
+<title>Waiver Form | Dream Charters ATX — Sign the Liability Waiver Online</title>
+<meta name="description" content="Sign the Dream Charters ATX liability waiver online before your charter. Every guest aboard signs — takes about two minutes on your phone. Minors are covered by a parent or guardian.">
 <link rel="canonical" href="https://www.dreamchartersboatrentals.com/waiver.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,40 +25,60 @@
   </div>
 </section>
 
+<!-- Tyler's live WaiverElectronic form. This page is the only place the waiver
+     URL appears, so it is hardcoded here rather than routed through layout.js
+     the way BOOKING_URL is (that one feeds the header, footer and every boat
+     card). The CTA hrefs are real hrefs, not JS-applied, because a required
+     legal form must still be reachable with scripts blocked. Verified
+     2026-07-27: app.waiverelectronic.com sends no X-Frame-Options and no CSP
+     frame-ancestors, and the form renders and signs inside a cross-origin
+     iframe — hence the embed below rather than a link-only page. The fallback
+     link stays regardless, since a blocked third-party frame (privacy
+     extension, strict tracking protection) would otherwise leave a guest with
+     no way to sign. -->
 <section class="section">
   <div class="wrap" style="max-width:860px">
 
-    <div class="waiver-frame">
+    <div class="center">
+      <div class="hero__cta" style="justify-content:center">
+        <a class="btn btn-primary btn-lg" href="https://app.waiverelectronic.com/s/af9gTaoc" target="_blank" rel="noopener noreferrer">Sign the waiver</a>
+        <a class="btn btn-secondary btn-lg" href="tel:+15128083270">Questions? Call 512-808-3270</a>
+      </div>
+      <p class="form-note" style="margin-top:12px">Opens our secure e-sign form — about two minutes on your phone.</p>
+    </div>
+
+    <div class="grid grid-2" style="align-items:start;gap:32px;margin-top:38px">
+      <div class="feature">
+        <h3>Who signs</h3>
+        <ul class="included" style="margin-top:1rem">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Every guest aboard signs — not just whoever booked</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> A parent or guardian signs for anyone under 18</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Sign any time before your trip — or at the dock</li>
+        </ul>
+      </div>
+      <div class="feature">
+        <h3>What it covers</h3>
+        <ul class="included" style="margin-top:1rem">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> The risks of boating and watersports, and your assumption of them</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Release of liability, medical fitness and emergency care</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Alcohol and conduct policy, and responsibility for damage</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="waiver-frame" style="margin-top:34px">
       <div class="waiver-frame__bar">
         <div class="waiver-frame__dots"><i></i><i></i><i></i></div>
         <span>Dream Charters ATX — Liability Waiver</span>
       </div>
-      <div class="waiver-frame__doc">
-        <h3 style="margin-top:0">Dream Charters ATX Liability Waiver &amp; Release</h3>
-        <p style="color:var(--text-muted)">Please read carefully before signing. By signing, each guest acknowledges the inherent risks of boating and water activities and agrees to the terms below.</p>
-
-        <h4>Assumption of risk</h4>
-        <div class="waiver-line mid"></div><div class="waiver-line"></div><div class="waiver-line short"></div>
-
-        <h4>Release &amp; acknowledgement</h4>
-        <div class="waiver-line"></div><div class="waiver-line mid"></div><div class="waiver-line short"></div>
-
-        <h4>Safety &amp; conduct</h4>
-        <div class="waiver-line mid"></div><div class="waiver-line"></div>
-
-        <div class="sig-row">
-          <div class="sig"><div class="line"></div><span>Guest signature</span></div>
-          <div class="sig"><div class="line"></div><span>Date</span></div>
-        </div>
-
-        <p style="margin-top:26px;color:var(--text-muted);font-size:.9rem"><!-- OWNER: connect real waiver form / e-sign link here --> This is a styled preview of the waiver. The live e-sign form will be embedded here.</p>
-      </div>
+      <iframe class="waiver-embed" src="https://app.waiverelectronic.com/s/af9gTaoc" loading="lazy"
+              title="Dream Charters ATX liability waiver — sign online"></iframe>
     </div>
+    <p class="book-embed__fallback">Form not loading? <a href="https://app.waiverelectronic.com/s/af9gTaoc" target="_blank" rel="noopener noreferrer">Open the waiver in a new tab</a>.</p>
 
     <div class="center" style="margin-top:30px">
       <div class="hero__cta" style="justify-content:center">
-        <a class="btn btn-primary btn-lg" href="book.html">Book your charter</a>
-        <a class="btn btn-secondary btn-lg" href="sms:+15128083270">Questions? Text 512-808-3270</a>
+        <a class="btn btn-secondary btn-lg" href="https://book.squareup.com/appointments/le7ady9q3649w9/location/LFRJ1VVM5ZY8J/services" target="_blank" rel="noopener noreferrer">Book your charter</a>
       </div>
       <p class="form-note" style="margin-top:12px">Not ready to sign yet? No problem — you can complete the waiver anytime before your trip.</p>
     </div>

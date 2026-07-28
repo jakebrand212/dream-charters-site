@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boat Charter Questions &amp; Booking Requests | Dream Charters ATX</title>
-<meta name="description" content="Questions about a Lake Travis, Lake Austin, Lake LBJ or Canyon Lake boat charter? Send us your details below, or text/call Dream Charters ATX at 512-808-3270 to speak to someone directly.">
+<title>Boat Charter Questions, Services &amp; Pricing | Dream Charters ATX</title>
+<meta name="description" content="Questions about a Lake Travis, Lake Austin, Lake LBJ or Canyon Lake boat charter? Send us your details, browse every charter and current pricing, or call Dream Charters ATX at 512-808-3270 to speak to someone directly.">
 <link rel="canonical" href="https://www.dreamchartersboatrentals.com/book.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +34,12 @@
    half-number reads as a typo and is harder to scan. */
 .page-hero a[href^="tel:"]{white-space:nowrap}
 
+/* The number inside the "Fastest response" banner is a real phone link, so it
+   needs a finger-sized target, not a text-sized one. Inline-block + vertical
+   padding takes it from 20px to 30px tall (WCAG 2.5.8 wants 24px minimum)
+   without changing the line's wording or pushing the banner taller. */
+.text-banner a{display:inline-block;padding:.3rem 0}
+
 /* Legal disclaimer — small but held at --text-muted (6.85:1 on white), never
    a lighter gray. Sits on the white section below the form, not on the navy
    hero, so that ratio is the one that actually applies. */
@@ -48,7 +54,7 @@
   <div class="wrap">
     <h1 class="hero-title"><span>Boat Charter Questions &amp;</span><span>Booking Requests</span></h1>
     <p>Thank you for checking out Dream Charters ATX for your upcoming boat charter.</p>
-    <p>For questions, please provide the following information or text/call us at <a href="tel:+15128083270">512-808-3270</a> to speak to someone directly.</p>
+    <p>For questions, please provide the following information or call us at <a href="tel:+15128083270">512-808-3270</a> to speak to someone directly.</p>
   </div>
 </section>
 
@@ -56,8 +62,8 @@
   <div class="wrap" style="max-width:760px">
 
     <div class="text-banner">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--action)" aria-hidden="true"><path d="M4 4h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H8l-4 4V5a1 1 0 0 1 1-1z"/></svg>
-      <span><b>Fastest response:</b> text us at <a href="sms:+15128083270"><b>512-808-3270</b></a> and we'll get you booked.</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--action)" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      <span><b>Fastest response:</b> call us at <a href="tel:+15128083270"><b>512-808-3270</b></a> and we'll get you booked.</span>
     </div>
 
     <form class="form" data-demo novalidate>
@@ -100,7 +106,8 @@
             <option>Centurion Ri237 — Lake Travis</option>
             <option>Nautique G23 — Lake Travis</option>
             <option>Nautique 230 — Lake Travis, Lake Austin, Lake LBJ</option>
-            <option>G23 Paragon — Lake Austin, Canyon Lake</option>
+            <!-- Canyon Lake only — confirmed by Tyler 2026-07-27 -->
+            <option>G23 Paragon — Canyon Lake</option>
             <option>Not sure yet — help me pick</option>
           </select>
         </div>
@@ -112,6 +119,8 @@
             <option>5–8</option>
             <option>9–10</option>
             <option>11–12</option>
+            <!-- 13 is the Paragon's confirmed capacity — the fleet maximum -->
+            <option>13</option>
           </select>
         </div>
       </div>
@@ -141,6 +150,27 @@
 
     <p class="disclaimer">*Dream Charters ATX is a booking service, and each boat is independently owned &amp; operated by the captain.</p>
 
+  </div>
+</section>
+
+<!-- ===== Square services & pricing embed =====
+     Addition, not a replacement — the enquiry form above stays the primary ask.
+     This is a browsable PRICE MENU, not an in-page booking flow: Square breaks
+     out of the iframe into a new tab as soon as a service is clicked, so the
+     heading and lead deliberately promise browsing rather than booking. Do not
+     re-word them back toward "book online here" — the embed cannot deliver it.
+     The iframe src and the fallback link href are both set from BOOKING_URL in
+     js/layout.js, so the booking URL is never copied into this page. -->
+<section class="section bg-soft" id="book-online">
+  <div class="wrap" style="max-width:760px">
+    <p class="eyebrow">Know what you want?</p>
+    <h2>Services &amp; pricing</h2>
+    <p class="lead">Browse every charter and current pricing below. Selecting a service opens Square's secure booking page in a new tab.</p>
+    <div class="book-embed__frame" style="margin-top:22px">
+      <iframe class="book-embed" data-book-embed loading="lazy"
+              title="Dream Charters ATX online booking"></iframe>
+    </div>
+    <p class="book-embed__fallback">Trouble booking? <a data-book-link>Open our booking page in a new tab</a></p>
   </div>
 </section>
 

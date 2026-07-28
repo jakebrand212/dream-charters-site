@@ -16,12 +16,16 @@
 <body data-page="gallery">
 <div id="site-header"></div>
 
-<section class="page-hero">
+<!-- The h1 deliberately carries .eyebrow, not hero-h1 sizing: it is the page's
+     only heading and has to exist for SEO and screen readers, but Tyler wants
+     the small label look. .page-hero .eyebrow (0,2,0) outranks .page-hero h1
+     (0,1,1), so colour/size/tracking all still come from .eyebrow — the tag
+     swap is visually a no-op. Padding trimmed from the default 60px because a
+     one-line label in a 60px band read as an empty navy bar. -->
+<section class="page-hero" style="padding:26px 0">
   <img class="page-hero__img" src="assets/paragon.png" alt="G23 Paragon on Canyon Lake">
   <div class="wrap">
-    <p class="eyebrow">The gallery</p>
-    <h1>Real boats. Real days.</h1>
-    <p>From glamour shots of the fleet to golden-hour tubing and big group charters — this is what your day could look like.</p>
+    <h1 class="eyebrow">The gallery</h1>
   </div>
 </section>
 
@@ -61,7 +65,7 @@
         <figcaption>Good crews, good vibes</figcaption>
       </figure>
     </div>
-    <div class="center" style="margin-top:30px"><a class="btn btn-primary btn-lg" href="book.html">Book your day on the water</a></div>
+    <div class="center" style="margin-top:30px"><a class="btn btn-primary btn-lg" href="https://book.squareup.com/appointments/le7ady9q3649w9/location/LFRJ1VVM5ZY8J/services" target="_blank" rel="noopener noreferrer">Book your day on the water</a></div>
   </div>
 </section>
 
