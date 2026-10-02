@@ -490,3 +490,19 @@ img{max-width:100%;display:block}
 .stack>*+*{margin-top:1rem}
 .divider{height:1px;background:var(--border);border:0;margin:0}
 .note-owner{font-size:0}/* hidden owner markers via html comments only */
+
+/* ===== Cancellation & Refund Policy callout =====
+   Sits directly above the Square price menu on book.html — the last thing a
+   guest reads before paying. Solid --navy left rule (not the dashed
+   .text-banner look, which reads as a friendly tip) so it reads as terms.
+   Body text stays --text (never muted) because this is the one paragraph on
+   the page that must not be skimmed past. */
+.policy{background:#fff;border:1px solid var(--border);border-left:5px solid var(--navy);border-radius:12px;padding:18px 20px;margin-top:22px;box-shadow:var(--shadow-sm)}
+.policy__title{display:flex;align-items:center;gap:.5rem;font-size:1.1rem;margin:0 0 .45rem}
+.policy__title svg{flex:0 0 auto;color:var(--navy)}
+.policy p{margin:0;max-width:62ch;line-height:1.55}
+.policy strong{color:var(--navy)}
+/* Anchor target lands below the sticky nav instead of underneath it. */
+#refund-policy{scroll-margin-top:90px}
+.footer__policy{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.footer__policy:hover{color:#fff}

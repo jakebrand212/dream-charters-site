@@ -129,7 +129,8 @@
         "</div>" +
       "</div>" +
       '<div class="wrap footer__bottom">' +
-        "<span>© " + "2026 Dream Charters ATX · Demo site</span>" +
+        "<span>© " + "2026 Dream Charters ATX · Demo site · " +
+          '<a class="footer__policy" href="book.html#refund-policy">Cancellation &amp; Refund Policy</a></span>' +
         '<span><span class="stars" aria-hidden="true">★</span> '+
         '<span class="sr-only">Rated </span>4.9<span class="sr-only"> out of 5 stars</span> · 74 Google reviews</span>' +
       "</div>" +

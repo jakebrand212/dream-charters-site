@@ -9,6 +9,15 @@
       btn.setAttribute("aria-expanded", expanded ? "true" : "false");
     });
   });
+  // Deep link (e.g. faq.html#refund-policy from the footer) opens that item.
+  if (location.hash) {
+    var target = document.querySelector(".acc__item" + location.hash);
+    if (target && !target.classList.contains("open")) {
+      target.classList.add("open");
+      var q = target.querySelector(".acc__q");
+      if (q) q.setAttribute("aria-expanded", "true");
+    }
+  }
 
   // ---- Review filter chips ----
   var chips = document.querySelectorAll(".chip[data-filter]");
